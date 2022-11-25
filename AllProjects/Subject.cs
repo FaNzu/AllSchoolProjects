@@ -8,8 +8,21 @@ namespace AllProjects
 {
     public abstract class Subject
     {
-        public abstract void Attach(Observer o);
-        public abstract void Detach(Observer o);
-        public abstract void Notify();
+        private List<Observer> observers = new List<Observer>();
+        public void Attach(Observer o)
+        {
+            observers.Add(o);
+        }
+        public void Detach(Observer o)
+        {
+            observers.Remove(o);
+        }
+        public void Notify()
+        {
+            foreach (ConcreteObserver o in observers)
+            {
+                o.Update();
+            }
+        }
     }
 }

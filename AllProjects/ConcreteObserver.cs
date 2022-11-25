@@ -14,12 +14,11 @@ namespace AllProjects
         public ConcreteObserver(ConcreteSubject subject)
         {
             this.subject = subject;
-            Update();
         }
 
         public override void Update()
         {
-            State++;
+            State = subject.State;
         }
     }
 }

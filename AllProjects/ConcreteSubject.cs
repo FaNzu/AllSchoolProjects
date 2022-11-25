@@ -9,31 +9,15 @@ namespace AllProjects
 {
     public class ConcreteSubject : Subject
     {
-        List<Observer> Observers = new List<Observer> ();
+        private int state = 0;
         public int State
         {
+            get { return state; }
             set
             {
-                foreach (ConcreteObserver observer in Observers)
-                {
-                    observer.State = value;
-                }
+                state = value;
+                Notify();
             }
-        }
-
-        public override void Attach(Observer o)
-        {
-            Observers.Add(o);
-        }
-
-        public override void Detach(Observer o)
-        {
-            Observers.Remove(o);
-        }
-
-        public override void Notify()
-        {
-            throw new NotImplementedException();
         }
     }
 }
