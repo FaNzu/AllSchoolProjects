@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AllProjects
+namespace AllProjects.Ex05
 {
-    public abstract class Observer
+    internal class Calculator
     {
-        public abstract void Update();
     }
 }

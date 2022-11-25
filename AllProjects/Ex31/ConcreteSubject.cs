@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AllProjects
+namespace AllProjects.Ex31
 {
     public class ConcreteSubject : Subject
     {
-        List<Observer> Observers = new List<Observer> ();
+        List<Observer> Observers = new List<Observer>();
         public int State
         {
             set

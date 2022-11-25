@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AllProjects
+namespace AllProjects.Ex31
 {
     public abstract class Subject
     {
