@@ -22,7 +22,6 @@ namespace AllProjects
             }
         }
 
-
         public Academy(string name, string address) : base(name)
         {
             Adress = address;
