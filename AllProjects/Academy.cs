@@ -1,9 +1,11 @@
 ﻿using System;
 namespace AllProjects
 {
-    public class Academy : Organization, ISubject
+    public delegate void NotifyHandler();
+
+    public class Academy : Organization
     {
-        private List<IObserver> students = new List<IObserver>();
+        public NotifyHandler MessageChanged;
 
         private string message;
         public string Message
@@ -12,7 +14,7 @@ namespace AllProjects
             set
             {
                 message = value;
-                Notify();
+                OnMessageChanged();
             }
         }
 
@@ -22,22 +24,9 @@ namespace AllProjects
 
         }
 
-        public void Attach(IObserver o)
+        public void OnMessageChanged()
         {
-            students.Add(o);
-        }
-
-        public void Detach(IObserver o)
-        {
-            students.Remove(o);
-        }
-
-        public void Notify()
-        {
-            foreach (IObserver o in students)
-            {
-                o.Update();
-            }
+            MessageChanged();
         }
     }
 }
