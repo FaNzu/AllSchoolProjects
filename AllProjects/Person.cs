@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace AllProjects
 {
-    public abstract class Observer
+    public abstract class Person
     {
-        public abstract void Update();
+        public string Name { get; }
+        public Person(string name)
+        {
+            Name = name;
+        }
     }
 }
