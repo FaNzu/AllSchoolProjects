@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace AllProjects
 {
-    public abstract class Person
+    public class Product
     {
-        public string Name { get; }
-        public Person(string name)
-        {
-            Name = name;
-        }
+        public string Name { get; set; }
+        public double Value { get; set; }
     }
 }
